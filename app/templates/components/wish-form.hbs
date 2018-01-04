@@ -1,0 +1,7 @@
+{{yield}}
+<div>
+	{{input value=name}}
+	{{input type="radio" name="gender" change=(action (mut gender) 'male')  value='male'}}
+	{{input type="radio" name="gender" change=(action (mut gender) 'female')  value='female'}}
+	<input type="button" id ="add-button" value="Add" {{action 'add' name}}/>
+</div>
