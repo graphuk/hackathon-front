@@ -1,4 +1,10 @@
-{{wish-form wish="happy new year"}}
+{{#if isFilled}}
+	<div>
+		{{message}}	
+	</div>
+{{else}}
+	{{wish-form actionToCall="add"}}
+{{/if}}
 <div class="santa">
 	<div class="hat"></div>
 	<div class="head">
