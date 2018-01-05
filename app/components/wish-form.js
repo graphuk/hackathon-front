@@ -32,8 +32,8 @@ export default Component.extend({
 			if (!this.isNameEmpty && !this.isGenderEmpty) {
 				const wishArray = wishData[gender].array;
 				const wish = wishArray[Math.floor(Math.random() * wishArray.length)];
-				const message = wishData[gender].prefix + ' ' + name + ', ' + wish;
-				this.sendAction('actionToCall', message);
+				const prefix =  wishData[gender].prefix + ' ' + name + ', ';
+				this.sendAction('actionToCall', prefix, wish);
 			}
 		}
 	}

@@ -5,9 +5,10 @@ export default Controller.extend({
 	message: '',
 
 	actions: {
-		add(message) {
+		add(prefix, message) {
 			this.toggleProperty('isFilled');
 			this.set('message', message);
+			this.set('prefix', prefix);
 		}
 	}
 });
