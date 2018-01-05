@@ -7,7 +7,7 @@ export default Component.extend({
 	isGenderEmpty: false,
 
 	actions: {
-		add(name) {
+		create(name) {
 			const wishData = {
 				male: {
 					array: maleWish,

@@ -1,13 +1,29 @@
 {{yield}}
-<div>
-	{{input value=name}}
-	{{#if isNameEmpty}}
-		<div class='error-message'>Пожалуйста, впишите свое имя</div>
-	{{/if}}
-	{{input type="radio" name="gender" change=(action (mut gender) 'male')  value='male'}}	
-	{{input type="radio" name="gender" change=(action (mut gender) 'female')  value='female'}}
-	{{#if isGenderEmpty}}
-		<div class='error-message'>Пожалуйста, выберите ваш пол</div>
-	{{/if}}
-	<input type="button" id ="add-button" value="Add" {{action 'add' name}}/>
+<div class='wish-form'>
+	<div class='wish-form__field'>
+		<label class='wish-form__label' for='name'>Имя</label>
+		{{input value=name id='name' class='wish-form__input'}}
+		{{#if isNameEmpty}}
+			<div class='wish-form__error-message'>Пожалуйста, впишите свое имя</div>
+		{{/if}}
+	</div>	
+	
+	<div class='wish-form__field'>
+		<div class='wish-form__radio-item'>
+			{{input type="radio" name="gender" class='wish-form__radio-input' change=(action (mut gender) 'male')  id='male' value='male'}}	
+			<label class='wish-form__radio-label' for="male">Я мужчина!</label>
+			<div class="wish-form__radio-check"></div>
+		</div>
+		<div class='wish-form__radio-item'>
+			{{input type="radio" class='wish-form__radio-input' name="gender" change=(action (mut gender) 'female')  id='female' value='female'}}
+			<label for="female" class='wish-form__radio-label'>Я женщина!</label>	
+			<div class="wish-form__radio-check"></div>
+		</div>
+	
+		{{#if isGenderEmpty}}
+			<div class='wish-form__error-message'>Пожалуйста, выберите ваш пол</div>
+		{{/if}}
+	</div>
+	
+	<input type="button" id ="add-button" class='wish-form__button' value="Хочу пожелание!" {{action 'create' name}}/>
 </div>
