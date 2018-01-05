@@ -1,7 +1,13 @@
 {{yield}}
 <div>
 	{{input value=name}}
-	{{input type="radio" name="gender" change=(action (mut gender) 'male')  value='male'}}
+	{{#if isNameEmpty}}
+		<div class='error-message'>Пожалуйста, впишите свое имя</div>
+	{{/if}}
+	{{input type="radio" name="gender" change=(action (mut gender) 'male')  value='male'}}	
 	{{input type="radio" name="gender" change=(action (mut gender) 'female')  value='female'}}
+	{{#if isGenderEmpty}}
+		<div class='error-message'>Пожалуйста, выберите ваш пол</div>
+	{{/if}}
 	<input type="button" id ="add-button" value="Add" {{action 'add' name}}/>
 </div>
