@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('wish');
+  this.route('story');
 });
 
 export default Router;
