@@ -6,24 +6,24 @@
 		{{#if isNameEmpty}}
 			<div class='wish-form__error-message'>Пожалуйста, впишите свое имя</div>
 		{{/if}}
-	</div>	
-	
+	</div>
+
 	<div class='wish-form__field'>
 		<div class='wish-form__radio-item'>
-			{{input type="radio" name="gender" class='wish-form__radio-input' change=(action (mut gender) 'male')  id='male' value='male'}}	
+			{{input type="radio" name="gender" class='wish-form__radio-input' change=(action (mut gender) 'male')  id='male' value='male'}}
 			<label class='wish-form__radio-label' for="male">Я мужчина!</label>
 			<div class="wish-form__radio-check"></div>
 		</div>
 		<div class='wish-form__radio-item'>
 			{{input type="radio" class='wish-form__radio-input' name="gender" change=(action (mut gender) 'female')  id='female' value='female'}}
-			<label for="female" class='wish-form__radio-label'>Я женщина!</label>	
+			<label for="female" class='wish-form__radio-label'>Я женщина!</label>
 			<div class="wish-form__radio-check"></div>
 		</div>
-	
+
 		{{#if isGenderEmpty}}
 			<div class='wish-form__error-message'>Пожалуйста, выберите ваш пол</div>
 		{{/if}}
 	</div>
-	
-	<input type="button" id ="add-button" class='wish-form__button' value="Хочу пожелание!" {{action 'create' name}}/>
+
+	<button id ="add-button" autofocus class='wish-form__button' {{action 'create' name}}>Хочу пожелание!</button>
 </div>
