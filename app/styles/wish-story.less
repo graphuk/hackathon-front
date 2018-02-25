@@ -1,0 +1,44 @@
+.wish-story {
+	max-width: 1296px;
+	margin: 0 auto;
+
+	&__header {
+		margin: 0 15px 20px;
+	}
+
+	&__container {
+		display: flex;
+		list-style: none;
+		padding-left: 0;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		flex-basis: calc(~"100% / 3 - 90px");
+		background-color: #FAE6A7;
+		padding: 15px;
+		margin: 0 15px 30px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__name {
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+
+	&__text {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	&__gender {
+		font-size: 14px;
+		margin-bottom: 20px;
+	}
+
+	&__date {
+		font-size: 12px;
+		margin-top: auto;
+	}
+}

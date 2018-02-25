@@ -1,4 +1,31 @@
 <div class='wish-story'>
-  123
+	<div class='wish-story__header'>
+		<h2>История пожеланий</h2>
+		<div>Количество записей: {{model.length}}</div>
+	</div>
+
+	<ul class='wish-story__container'>
+		{{#each model key="id" as |wish|}}
+			<li class='wish-story__item'>
+				<div class='wish-story__name'>Имя: {{wish.name}}</div>
+				<div class='wish-story__text'>
+					Текст: {{wish.wishText.content.content}}
+				</div>
+				<div class='wish-story__gender'>
+					Пол:
+					{{#if wish.gender}}
+						М
+					{{else}}
+						Ж
+					{{/if}}
+				</div>
+
+				<div class='wish-story__date'>Создано: {{wish.createdAt}}</div>
+			</li>
+		{{/each}}
+	</ul>
+	<div class="story-link">
+		{{#link-to "wish"}}Создать пожелание{{/link-to}}
+	</div>
 </div>
 {{outlet}}

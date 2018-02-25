@@ -1,7 +1,10 @@
 import Route from '@ember/routing/route';
+import data from '../wishes/db';
 
 export default Route.extend({
 	model() {
-		return this.get('store').peekAll('wish');
+		this.get('store').push({
+			data
+		});
 	}
 });
